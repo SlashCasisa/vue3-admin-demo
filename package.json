@@ -9,6 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "echarts": "5.0.0",
     "element-plus": "1.0.1-beta.3",
     "path": "0.12.7",
     "vue": "3.0.4",

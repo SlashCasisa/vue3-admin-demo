@@ -25,7 +25,7 @@
       "src/types/images.d.ts",
       "tests/**/*.ts",
       "tests/**/*.tsx"
-    ],
+, "src/utils/echart.ts"    ],
     "exclude": [
       "node_modules"
     ]

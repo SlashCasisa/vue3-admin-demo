@@ -922,6 +922,14 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+echarts@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/echarts/download/echarts-5.0.0.tgz#66ec0ea47e3c93b2aadfbb2d719869932ad13ce0"
+  integrity sha1-ZuwOpH48k7Kq37stcZhpkyrRPOA=
+  dependencies:
+    tslib "1.10.0"
+    zrender "5.0.1"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -2595,8 +2603,6 @@ rollup@^2.32.1:
   version "2.34.1"
   resolved "https://registry.npm.taobao.org/rollup/download/rollup-2.34.1.tgz?cache=0&sync_timestamp=1606973821233&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frollup%2Fdownload%2Frollup-2.34.1.tgz#a387230df02c58b242794a213dfb68b42de2c8fb"
   integrity sha1-o4cjDfAsWLJCeUohPftotC3iyPs=
-  dependencies:
-    fsevents "~2.1.2"
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -2965,6 +2971,11 @@ trim-newlines@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
+tslib@1.10.0:
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
+  integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
+
 tsscmp@1.0.6:
   version "1.0.6"
   resolved "https://registry.npm.taobao.org/tsscmp/download/tsscmp-1.0.6.tgz#85b99583ac3589ec4bfef825b5000aa911d605eb"
@@ -3219,3 +3230,10 @@ ylru@^1.2.0:
   version "1.2.1"
   resolved "https://registry.npm.taobao.org/ylru/download/ylru-1.2.1.tgz#f576b63341547989c1de7ba288760923b27fe84f"
   integrity sha1-9Xa2M0FUeYnB3nuiiHYJI7J/6E8=
+
+zrender@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npm.taobao.org/zrender/download/zrender-5.0.1.tgz?cache=0&sync_timestamp=1605884134992&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fzrender%2Fdownload%2Fzrender-5.0.1.tgz#cc377136a9d00d0a177ca7f65c32aed2901928da"
+  integrity sha1-zDdxNqnQDQoXfKf2XDKu0pAZKNo=
+  dependencies:
+    tslib "1.10.0"
