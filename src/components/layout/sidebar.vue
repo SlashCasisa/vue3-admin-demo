@@ -47,6 +47,7 @@ export default {
 };
 </script>
 <style lang="scss">
+$blue:#5F94FF;
 .sidebar-container {
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 3px 0px 0px 0px;
@@ -59,7 +60,7 @@ export default {
 
     .el-menu-item.is-active {
         background: #EDF4FF !important;
-        color: #5F94FF!important;
+        color: $blue!important;
         &::after{
           position: absolute;
           left: 0;
@@ -67,31 +68,44 @@ export default {
           content: '';
           width: 10px;
           height:100%;
-          background: #5F94FF;
+          background: $blue;
+        }
+        i {
+            color: $blue!important;
         }
     }
 
     .el-menu-item,
     .el-submenu__title {
-        color: #000!important;
+        color: #303133!important;
         &:hover {
             background: #EDF4FF !important;
-            color: #5F94FF!important;
+            color: $blue!important;
+            i {
+              color: $blue!important;
+            }
         }
 
         i {
-            color: #5F94FF !important;
+            color: #303133!important;
         }
     }
 
     .scrollbar-wrapper {
         overflow-x: hidden;
     }
+    .el-menu {
+      border-right: 0 !important;
+      text-align: center;
+      font-size: 16px;
+      .navbar-icon{
+        font-size: 18px;
+        padding-right: 10px;
+      }
+    }
 }
 
-.el-menu {
-    border-right: 0 !important;
-}
+
 
 .app-menu-container {
     height: calc(100vh - 200px);

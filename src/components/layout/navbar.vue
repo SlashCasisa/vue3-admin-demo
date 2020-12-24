@@ -84,7 +84,6 @@ export default {
 
       for (let i = 0; i < useRouters.length; i++) {
         if (useRouters[i] && useRouters[i].path === first_path) {
-          // this.$store.commit("SET_SIDEBAR_ROUTES", useRouters[i].children);
           let sidebarRoutes = inject<Ref<Array<any>>>(Store.sidebarRoutes);
           sidebarRoutes.value = useRouters[i].children;
         }
@@ -102,7 +101,6 @@ export default {
       return first_path;
     };
     const resolvePath = (routePath) => {
-      // console.log(routePath, 'routdddd')
       const isExternal = (routePath) => /^(https?:|mailto:|tel:)/.test(routePath);
       if (isExternal(routePath)) {
         return routePath;

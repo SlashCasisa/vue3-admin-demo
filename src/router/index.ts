@@ -87,7 +87,7 @@ export const asyncRouter = [{
         component: () => import('../views/journal/login.vue'),
         meta: {
             title: "登录日志",
-            icon: ''
+            icon: 'icon-loginLog'
         },
         hidden: false,
     },{
@@ -95,7 +95,7 @@ export const asyncRouter = [{
         component: () => import('../views/journal/operation.vue'),
         meta: {
             title: "操作日志",
-            icon: ''
+            icon: 'icon-operateLog'
         },
         hidden: false,
     }]
