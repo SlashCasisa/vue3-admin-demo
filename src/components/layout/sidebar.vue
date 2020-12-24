@@ -27,7 +27,6 @@ export default {
     const routes = computed(() => {
       //    return this.$store.state.sidebar_routes;
       const sidebarRoutes = inject < Ref <Array<any> >>(Store.sidebarRoutes)
-      console.log(sidebarRoutes.value,'ssss')
       return sidebarRoutes.value
     });
     const activeMenu = () => {
