@@ -42,7 +42,6 @@ export default {
     //routes：路由数组
     //first_path：返回的第一个变量路由路径
     const filteroneRoutes = (path, routes, first_path) => {
-      console.log(path, routes, first_path);
       //查找当前的首级路由
       for (let i = 0; i < routes.length; i++) {
         if (routes[i].path === path) {

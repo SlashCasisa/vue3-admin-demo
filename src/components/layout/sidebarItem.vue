@@ -39,7 +39,6 @@ export default {
     },
     setup(props) {
         const resolvePath = (routePath) =>{
-            // console.log(routePath, 'routdddd')
             const isExternal = (routePath) => /^(https?:|mailto:|tel:)/.test(routePath)
             if (isExternal(routePath)) {
                 return routePath
