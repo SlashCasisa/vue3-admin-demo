@@ -81,16 +81,12 @@ export default {
     };
     const routes = handleMenu();
     const push_sidebar_routes = (first_path) => {
-      console.log(first_path, "path");
 
       for (let i = 0; i < useRouters.length; i++) {
-        console.log(useRouters[i].path, first_path, "emmmmmm&&7");
         if (useRouters[i] && useRouters[i].path === first_path) {
           // this.$store.commit("SET_SIDEBAR_ROUTES", useRouters[i].children);
           let sidebarRoutes = inject<Ref<Array<any>>>(Store.sidebarRoutes);
-          console.log(sidebarRoutes, "here****");
           sidebarRoutes.value = useRouters[i].children;
-          console.log(sidebarRoutes.value, "herre");
         }
       }
     };
@@ -98,7 +94,6 @@ export default {
     const activeMenu = () => {
       //激活当前地址的第一级菜单
       const { meta, path } = route;
-      console.log(meta, path, "meta&path");
       let first_path = filteroneRoutes(path, routes, null);
       push_sidebar_routes(first_path);
       if (meta.activeMenu) {
