@@ -1,0 +1,42 @@
+.page-warpper{
+    width: 100vw;
+    height: calc(100vh - 65px);
+    min-width: 1181px;
+    background: #f7f7f7;
+    padding: 16px;
+    .flex{
+        display: flex;
+        align-items: center;
+    }
+    .search-container{
+        .form-item{
+            padding-right: 16px;
+            .label{
+                padding-right: 16px;
+            }
+            .el-date-editor{
+                width: 232px;
+            }
+            .el-select{
+                .el-input__inner{
+                    width: 140px;
+                }
+            }
+            .ip-input .el-input__inner{
+                width: 209px;
+            }
+        }
+    }
+    .table-warpper{
+        background:#fff;
+        padding: 16px;
+        margin-top: 16px;
+        .table-header{
+            background: #EDF4FF;
+        }
+        .footer{
+            padding:16px 0px;
+            text-align: right;
+        }
+    }
+}
