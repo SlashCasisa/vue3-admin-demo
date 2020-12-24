@@ -1,3 +1,3 @@
 <template>
-    <div>111</div>
+    <div class="page-wrapper"></div>
 </template>
