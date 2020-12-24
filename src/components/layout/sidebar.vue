@@ -17,6 +17,8 @@
 import sidebarItem from "./sidebarItem.vue";
 import { computed } from "vue";
 import {useRoute} from 'vue-router'
+import { inject, Ref} from 'vue'
+import Store from "../../store/store"
 export default {
   components: {
     sidebarItem,
@@ -24,26 +26,9 @@ export default {
   setup(context) {
     const routes = computed(() => {
       //    return this.$store.state.sidebar_routes;
-      return [{
-          path: "/",
-          meta: {
-            icon: "",
-            title: "人力管理",
-          },
-          redirect: {
-            path: "/manpowerResources",
-          },
-          children: [
-            {
-              path: "/manpowerResources",
-              meta: {
-                title: "人力资源",
-                icon: "",
-              },
-            },
-          ],
-        },
-      ];
+      const sidebarRoutes = inject < Ref <Array<any> >>(Store.sidebarRoutes)
+      console.log(sidebarRoutes.value,'ssss')
+      return sidebarRoutes.value
     });
     const activeMenu = () => {
       const route = useRoute();
@@ -53,7 +38,7 @@ export default {
       }
       return path;
     };
-    console.log(routes,'routes')
+    
     return {
       routes,
       activeMenu,

@@ -11,7 +11,12 @@
         "dom",
         "dom.iterable",
         "scripthost"
-      ]
+      ],
+      "target": "esnext",
+      "module": "esnext",
+      "strict": false,
+      "jsx": "preserve",
+      "moduleResolution": "node"
     },
     "include": [
       "src/**/*.ts",

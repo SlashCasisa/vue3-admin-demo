@@ -1,19 +1,20 @@
 import path from 'path'
 
-module.exports = {
+module.exports =  {
   alias: {
     '/@/': path.resolve(__dirname, './src')
   },
   optimizeDeps: {
     include: ['lodash']
   },
-  proxy: {}
+  proxy: {},
+  css: {
+		loaderOptions: {
+		  sass: {
+			additionalData: `@import "@/assets/_variable.scss";`
+		  }
+		}
+	}
 }
-// css: {
-	// 	loaderOptions: {
-	// 	  sass: {
-	// 		additionalData: `@import "@/assets/_variable.scss";`
-	// 	  }
-	// 	}
-	// }
+
 

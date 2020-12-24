@@ -2,19 +2,20 @@
 <div id="app">
     <router-view />
 </div>
-<!--
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
-  -->
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  // components: {
-    // HelloWorld
-  // }
-}
+import Store from "./store/store"
+import {defineComponent, provide, ref} from 'vue'
+// export default {
+//   name: 'App',
+//   setup(){
+//     provide('sidebarRoutes', ref([])) 
+//   }
+// }
+export default defineComponent({
+  setup() {
+    provide(Store.sidebarRoutes, ref([]))
+  }
+})
 </script>

@@ -38,8 +38,6 @@ export default {
         }
     },
     setup(props) {
-       const { item } = props;
-       console.log(item,'item####')
         const resolvePath = (routePath) =>{
             // console.log(routePath, 'routdddd')
             const isExternal = (routePath) => /^(https?:|mailto:|tel:)/.test(routePath)
@@ -52,9 +50,6 @@ export default {
             resolvePath
         }
     },
-    created(){
-        console.log(this.item,'items____-')
-    }
 }
 </script>
 
