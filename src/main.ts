@@ -8,6 +8,7 @@ import locale from '../node_modules/element-plus/lib/locale/lang/zh-cn'
 import * as echarts from 'echarts'
 import myEcharts from './utils/echart';
 
+import "./assets/scss/_variable.scss";
 const app = createApp(App)
 app.use(echarts)
 app.config.globalProperties.$echarts = echarts

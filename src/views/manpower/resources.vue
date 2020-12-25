@@ -145,6 +145,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     margin: 16px;
-    background: var(--main-bgColor);
+    background: var(--main-color);
 }
 </style>
