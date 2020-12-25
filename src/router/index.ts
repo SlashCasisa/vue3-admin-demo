@@ -42,15 +42,26 @@ export const asyncRouter = [{
         path: '/chat'
     },
     hidden: false,
-    children: [{
+    children: [
+        {
         path: '/chat',
         component: () => import('../views/manpower/resources.vue'),
         meta: {
-            title: "图表",
-            icon: ''
+            title: "人力资料统计",
+            icon: 'icon-manpower'
         },
         hidden: false,
-    }]
+        },
+        {
+            path: '/personalChange',
+            component: () => import('../views/manpower/personalChange.vue'),
+            meta: {
+                title: '人事变动统计',
+                icon: 'icon-personnel'
+            },
+            hidden: false,
+        }
+    ]
 }, {
     path: '/attendanceAdministration',
     component: layout,
