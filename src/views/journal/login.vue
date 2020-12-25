@@ -8,6 +8,7 @@
           type="daterange"
           start-placeholder="开始日期"
           end-placeholder="结束日期"
+          value-format="timestamp"
           @change="handleListData"
         />
       </div>
@@ -41,8 +42,8 @@
         :row-class-name="rowClassName"
       >
         <el-table-column label="时间">
-          <template  #default="scope">
-            {{ $formatTimestamp(scope.row.time,'second') }}
+          <template #default="scope">
+            {{ $formatTimestamp(scope.row.time, "second") }}
           </template>
         </el-table-column>
         <el-table-column prop="account" label="账号" />
@@ -67,15 +68,15 @@ import tableList from '../../mixins/table_list'
 import { computed, ref, onMounted } from "vue";
 export default {
   setup() {
-    
+
     const options = [
       {
         value: "全部",
         label: "全部",
       },
       {
-        value: "登出",
-        label: "登出",
+        value: "登入",
+        label: "登入",
       },
       {
         value: "登出",
@@ -84,19 +85,69 @@ export default {
     ];
     const timeRange = ref([]);
     const type = ref("全部");
-   
-    const listParams = computed(() => {
+    const keyword = ref("");
+    const tableData = ref([]);
+    const pageNumber = ref(1);
+    const pageSize = ref(10);
+    const total = ref(15);
+      const listParams = computed(() => {
+        let range = timeRange.value[0]?{
+          startTime: timeRange.value[0].getTime(),
+          endTime: timeRange.value[1].getTime()
+        }: null
       return {
         pageNumber: pageNumber.value,
-        timeRange: timeRange.value,
+        range: range,
         type: type.value,
         keyword: keyword.value,
       };
     });
-    const req = {
-      listParams:listParams.value
-    }
-   const {rowClassName,keyword,tableData,pageNumber,pageSize, total,handleCurrentChange,handleListData}  = tableList(req)
+      //获取列表内容
+      const handleListData = async () => {
+        console.log(listParams.value);
+        tableData.value = [
+          {
+            time: "1608865710276",
+            account: "13513245678",
+            type: "登入",
+            ip: "123.123.123.123",
+          },
+          {
+            time: "1608865710276",
+            account: "13513245678",
+            type: "登入",
+            ip: "123.123.123.123",
+          },
+          {
+            time: "1608865710276",
+            account: "13513245678",
+            type: "登入",
+            ip: "123.123.123.123",
+          },
+          {
+            time: "1608865710276",
+            account: "13513245678",
+            type: "登入",
+            ip: "123.123.123.123",
+          },
+          {
+            time: "1608865710276",
+            account: "13513245678",
+            type: "登入",
+            ip: "123.123.123.123",
+          },
+        ];
+      }
+      onMounted(() => {
+        // 首屏加载的时候触发请求
+        handleListData();
+      });
+      const handleCurrentChange = (currentPage) => {
+        // 切换页码
+        pageNumber.value = currentPage;
+        handleListData();
+      };
+   const {rowClassName} = tableList()
     return {
       rowClassName,
       options,
@@ -110,6 +161,6 @@ export default {
       handleCurrentChange,
       handleListData,
     };
-  },
-};
+  }
+}
 </script>
