@@ -57,7 +57,7 @@ export default {
     height: 397px;
     padding: 30px 30px;
     margin-bottom: 16px;
-    background: var(--main-bgColor);
+    background: var(--main-color);
   }
 
 }
