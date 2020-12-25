@@ -4,12 +4,19 @@
       <div>{{ item.title }}</div>
       <div :id="item.id" style="width: 660px; height: 320px; padding: 20px;"></div>
     </div>
+    <el-button type="primary" @click="showDialog">出现弹框</el-button>
+    <export-date :isShow="object.isShow"></export-date>
   </div>
 </template>
 
 <script lang="ts">
 import { getCurrentInstance, onMounted, reactive } from "vue";
+import exportDate from "../../components/dialogs/exportDate.vue";
+
 export default {
+  components: {
+    exportDate
+  },
   setup() {
     const object = reactive({
       myChart: null,
@@ -25,6 +32,7 @@ export default {
           seriesData: [1, 1, 3, 3, 2, 3, 4, 2, 1, 2, 1],
         },
       ],
+      isShow: false
     });
     const { ctx } = getCurrentInstance();
     const initEchart = () => {
@@ -41,8 +49,16 @@ export default {
     onMounted(() => {
       initEchart();
     });
+    const methods = {
+      showDialog() {
+        console.log('ok');
+        
+        object.isShow = true
+      }
+    }
     return {
       object,
+      ...methods
     };
   },
 };
