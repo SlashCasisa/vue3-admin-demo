@@ -1,7 +1,7 @@
 <template>
   <div class="nav-container">
     <div class="nav-left">
-      <div class="logo-container"><img src="../../assets/img/logo.png" />恒睿人事管理云平台</div>
+      <div class="logo-container"><img src="../../assets/img/logo.png" />管理平台</div>
       <div class="menu-container">
         <el-menu
           class="admin-top-menu"

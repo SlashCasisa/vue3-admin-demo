@@ -16,7 +16,7 @@ export const asyncRouter = [{
     component: layout,
     meta: {
         icon: '',
-        title: '人力管理'
+        title: '管理'
     },
     redirect: {
         path: '/manpowerResources'
@@ -26,7 +26,7 @@ export const asyncRouter = [{
         path: '/manpowerResources',
         component: () => import('../views/manpower/resources.vue'),
         meta: {
-            title: "人力资源",
+            title: "资源",
             icon: ''
         },
         hidden: false,
@@ -47,7 +47,7 @@ export const asyncRouter = [{
         path: '/chat',
         component: () => import('../views/manpower/resources.vue'),
         meta: {
-            title: "人力资料统计",
+            title: "资料统计",
             icon: 'icon-manpower'
         },
         hidden: false,
@@ -56,7 +56,7 @@ export const asyncRouter = [{
             path: '/personalChange',
             component: () => import('../views/manpower/personalChange.vue'),
             meta: {
-                title: '人事变动统计',
+                title: '变动统计',
                 icon: 'icon-personnel'
             },
             hidden: false,
@@ -67,7 +67,7 @@ export const asyncRouter = [{
     component: layout,
     meta: {
         icon: '',
-        title: '考勤管理'
+        title: '管理'
     },
     redirect: {
         path: '/attendance'
@@ -87,7 +87,7 @@ export const asyncRouter = [{
     component: layout,
     meta: {
         icon: '',
-        title: '日志审计'
+        title: '日志'
     },
     redirect: {
         path: '/loginJournal'
@@ -97,7 +97,7 @@ export const asyncRouter = [{
         path: '/loginJournal',
         component: () => import('../views/journal/login.vue'),
         meta: {
-            title: "登录日志",
+            title: "登录",
             icon: 'icon-loginLog'
         },
         hidden: false,
@@ -105,7 +105,7 @@ export const asyncRouter = [{
         path: '/operationJournal',
         component: () => import('../views/journal/operation.vue'),
         meta: {
-            title: "操作日志",
+            title: "操作",
             icon: 'icon-operateLog'
         },
         hidden: false,
