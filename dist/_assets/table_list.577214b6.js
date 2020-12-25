@@ -1,0 +1,1 @@
+import{i as a,o as e,g as o}from"./index.35103e02.js";function t(){const t=a(""),r=a([]),s=a(1),n=a(10),l=a(15),{ctx:i}=o(),d=async()=>{console.log(i.listParams,"listParams***")};e((()=>{d()}));return{keyword:t,tableData:r,pageNumber:s,pageSize:n,total:l,rowClassName:({rowIndex:a})=>a%2==1?"even-row":"odd-row",handleListData:d,handleCurrentChange:a=>{s.value=a,d()}}}export{t};
