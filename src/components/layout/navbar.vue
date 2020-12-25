@@ -1,7 +1,7 @@
 <template>
   <div class="nav-container">
     <div class="nav-left">
-      <div class="logo-container"><img src="../../assets/logo.png" />人事管理系统</div>
+      <div class="logo-container"><img src="../../assets/img/logo.png" />人事管理系统</div>
       <div class="menu-container">
         <el-menu
           class="admin-top-menu"
@@ -136,16 +136,20 @@ $theme-color: #2b3d53;
   min-width: 1610px;
   .nav-left {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     .logo-container {
       width: 236px;
-      padding-left: 10px;
+      padding-left: 50px;
+      display: flex;
+      align-items: center;
+      font-size:18px;
     }
     img {
-      height: 20px;
-      width: 20px;
+      height: 28px;
+      width: 28px;
       border-radius: 10px;
-      padding-right: 10px;
+      margin-right: 10px;
     }
   }
 }
