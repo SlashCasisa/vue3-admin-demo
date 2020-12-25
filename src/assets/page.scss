@@ -1,3 +1,4 @@
+$main-font-color:#606266;
 .page-warpper{
     width: 100vw;
     height: calc(100vh - 65px);
@@ -31,8 +32,12 @@
         background:#fff;
         padding: 16px;
         margin-top: 16px;
+        color: $main-font-color;
         .table-header{
             background: #EDF4FF;
+        }
+        .even-row{
+            background: #F5F7F9;
         }
         .footer{
             padding:16px 0px;
