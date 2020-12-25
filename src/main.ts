@@ -10,7 +10,7 @@ import myEcharts from './utils/echart';
 import { formatTimestamp } from './utils/common.ts'//引入日期、格式化内容
 
 
-import "./assets/scss/_variable.scss";
+import "./assets/_variable.scss";
 const app = createApp(App)
 app.use(echarts)
 app.config.globalProperties.$echarts = echarts
