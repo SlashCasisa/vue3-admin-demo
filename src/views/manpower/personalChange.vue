@@ -73,7 +73,7 @@ export default {
     height: 397px;
     padding: 30px 30px;
     margin-bottom: 16px;
-    background: var(--main-color);
+    background: var(--c3);
   }
 
 }

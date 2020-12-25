@@ -122,16 +122,15 @@ export default {
 };
 </script>
 <style lang="scss">
-$theme-color: #2b3d53;
 .nav-container {
-  background: $theme-color;
+  background: var(--c1);
   width: 100%;
   z-index: 0;
   display: flex;
   align-items: center;
   height: 65px;
   line-height: 65px;
-  color: #fff;
+  color: var(--c3);
   justify-content: space-between;
   min-width: 1610px;
   .nav-left {
@@ -140,7 +139,7 @@ $theme-color: #2b3d53;
     align-items: center;
     .logo-container {
       width: 236px;
-      padding-left: 50px;
+      padding-left: 30px;
       display: flex;
       align-items: center;
       font-size:18px;

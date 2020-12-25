@@ -46,9 +46,9 @@ export default {
 };
 </script>
 <style lang="scss">
-$blue:#5F94FF;
+
 .sidebar-container {
-    background: #fff;
+    background: var(--c3);
     box-shadow: rgba(0, 0, 0, 0.1) 3px 0px 0px 0px;
     width: 248px;
     min-width: 248px;
@@ -58,8 +58,8 @@ $blue:#5F94FF;
     z-index: 1;
 
     .el-menu-item.is-active {
-        background: #EDF4FF !important;
-        color: $blue!important;
+        background: var(--c4) !important;
+        color:var(--c5)!important;
         &::after{
           position: absolute;
           left: 0;
@@ -67,26 +67,26 @@ $blue:#5F94FF;
           content: '';
           width: 10px;
           height:100%;
-          background: $blue;
+          background: var(--c5);
         }
         i {
-            color: $blue!important;
+            color: var(--c5)!important;
         }
     }
 
     .el-menu-item,
     .el-submenu__title {
-        color: #303133!important;
+        color: var(--c11)!important;
         &:hover {
-            background: #EDF4FF !important;
-            color: $blue!important;
+            background: var(--c4) !important;
+            color: var(--c5)!important;
             i {
-              color: $blue!important;
+              color: var(--c5)!important;
             }
         }
 
         i {
-            color: #303133!important;
+            color: var(--c11)!important;
         }
     }
 
@@ -96,7 +96,7 @@ $blue:#5F94FF;
     .el-menu {
       border-right: 0 !important;
       text-align: center;
-      font-size: 16px;
+      font-size: var(--title-size);
       .navbar-icon{
         font-size: 18px;
         padding-right: 10px;
