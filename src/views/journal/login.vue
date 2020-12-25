@@ -68,7 +68,6 @@ import tableList from '../../mixins/table_list'
 import { computed, ref, onMounted } from "vue";
 export default {
   setup() {
-
     const options = [
       {
         value: "全部",
@@ -85,11 +84,11 @@ export default {
     ];
     const timeRange = ref([]);
     const type = ref("全部");
-    const keyword = ref("");
-    const tableData = ref([]);
-    const pageNumber = ref(1);
-    const pageSize = ref(10);
-    const total = ref(15);
+    const {keyword,
+      tableData,
+      pageNumber,
+      pageSize,
+      total,rowClassName,handleCurrentChange,handleListData} = tableList()
       const listParams = computed(() => {
         let range = timeRange.value[0]?{
           startTime: timeRange.value[0].getTime(),
@@ -102,10 +101,7 @@ export default {
         keyword: keyword.value,
       };
     });
-      //获取列表内容
-      const handleListData = async () => {
-        console.log(listParams.value);
-        tableData.value = [
+    tableData.value = [
           {
             time: "1608865710276",
             account: "13513245678",
@@ -137,21 +133,11 @@ export default {
             ip: "123.123.123.123",
           },
         ];
-      }
-      onMounted(() => {
-        // 首屏加载的时候触发请求
-        handleListData();
-      });
-      const handleCurrentChange = (currentPage) => {
-        // 切换页码
-        pageNumber.value = currentPage;
-        handleListData();
-      };
-   const {rowClassName} = tableList()
     return {
       rowClassName,
       options,
       timeRange,
+      listParams,
       type,
       keyword,
       tableData,
