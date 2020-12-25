@@ -140,8 +140,11 @@ export default {
 };
 </script>
 <style lang="scss">
+
 .echarts-container {
     display: flex;
     flex-wrap: wrap;
+    margin: 16px;
+    background: var(--main-bgColor);
 }
 </style>
