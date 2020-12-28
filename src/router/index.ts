@@ -1,6 +1,6 @@
 import layout from '../views/index.vue' //布局页面
 import { createWebHashHistory, createRouter } from 'vue-router'
-const history = createWebHashHistory()
+const history = createWebHashHistory("/vue3-admin-demo/")
 export const constantRouter = [{
     path: '/login',
     component: () => import('../views/login.vue'),

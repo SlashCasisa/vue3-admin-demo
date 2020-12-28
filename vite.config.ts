@@ -1,6 +1,8 @@
 import path from 'path'
 
 module.exports =  {
+  base: "/vue3-admin-demo/",
+  assetsDir: "",
   alias: {
     '/@/': path.resolve(__dirname, './src')
   },
