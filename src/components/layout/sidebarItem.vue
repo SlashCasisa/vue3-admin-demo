@@ -25,7 +25,7 @@
 </div>
 </template>
 <script lang="ts" >
-import path from 'path'
+// import path from 'path'
 declare const props: {item: Object}
 export default {
     props:{
@@ -43,7 +43,8 @@ export default {
             if (isExternal(routePath)) {
                 return routePath
             }
-            return path.resolve(routePath)
+            // return path.resolve(routePath)
+            return routePath
         }
         return {
             resolvePath

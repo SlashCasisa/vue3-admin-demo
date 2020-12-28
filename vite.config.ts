@@ -16,7 +16,7 @@ module.exports =  {
         additionalData: `@import "/@/assets/_variable.scss"`
 		  }
 		}
-	}
+  }
 }
 
 

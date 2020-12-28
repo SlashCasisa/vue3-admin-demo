@@ -32,12 +32,23 @@
   </div>
 </template>
 <script lang="ts">
-import path from "path";
+// import path from "path";
 import { useRoute, useRouter } from "vue-router";
 import Store from "../../store/store";
 import { defineComponent, provide, ref, inject, Ref } from "vue";
 export default {
   setup() {
+    const route = useRoute();
+    const activeMenu = () => {
+      //激活当前地址的第一级菜单
+      const { meta, path } = route;
+      let first_path = filteroneRoutes(path, routes, null);
+      push_sidebar_routes(first_path);
+      if (meta.activeMenu) {
+        return meta.activeMenu;
+      }
+      return first_path;
+    };
     //path:要查找的路由变量路径
     //routes：路由数组
     //first_path：返回的第一个变量路由路径
@@ -88,23 +99,14 @@ export default {
         }
       }
     };
-    const route = useRoute();
-    const activeMenu = () => {
-      //激活当前地址的第一级菜单
-      const { meta, path } = route;
-      let first_path = filteroneRoutes(path, routes, null);
-      push_sidebar_routes(first_path);
-      if (meta.activeMenu) {
-        return meta.activeMenu;
-      }
-      return first_path;
-    };
+    
     const resolvePath = (routePath) => {
       const isExternal = (routePath) => /^(https?:|mailto:|tel:)/.test(routePath);
       if (isExternal(routePath)) {
         return routePath;
       }
-      return path.resolve(routePath);
+      // return path.resolve(routePath);
+      return routePath
     };
     return {
       activeMenu,
