@@ -7,15 +7,13 @@
 <script>
 import Store from "./store/store"
 import {defineComponent, provide, ref} from 'vue'
-// export default {
-//   name: 'App',
-//   setup(){
-//     provide('sidebarRoutes', ref([])) 
-//   }
-// }
+import * as echarts from 'echarts'
+import myEcharts from './utils/echart'
 export default defineComponent({
   setup() {
     provide(Store.sidebarRoutes, ref([]))
+    provide(Store.echarts, ref(echarts))
+    provide(Store.myEcharts,ref(myEcharts))
   }
 })
 </script>

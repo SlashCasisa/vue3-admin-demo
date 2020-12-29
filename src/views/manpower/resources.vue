@@ -5,7 +5,8 @@
 </template>
 
 <script lang="ts">
-import { getCurrentInstance, onMounted, reactive } from "vue";
+import { getCurrentInstance, onMounted, reactive,inject } from "vue";
+import Store from "../../store/store";
 export default {
   setup(props) {
       
@@ -107,7 +108,9 @@ export default {
         }
     }); 
     // const { ctx } = getCurrentInstance()  as any
-    const { proxy } = getCurrentInstance() as any;
+    // const { proxy } = getCurrentInstance() as any;
+     let echarts = inject(Store.echarts) as any;
+    let myEcharts = inject(Store.myEcharts) as any;
     const initEchart = () => {
         object.echartsData.forEach(item => {
             const seriesData = item.seriesData.map((item, index) => {
@@ -124,10 +127,14 @@ export default {
                 label: item.label,
                 seriesData: seriesData,
             }
-            object.myChart = proxy.$echarts.init(
+            // object.myChart = proxy.$echarts.init(
+            //     document.querySelector(`#${item.id}`)
+            // )
+            // proxy.$myEcharts.drawPieEcharts(object.myChart, echartsData)
+            object.myChart = echarts.value.init(
                 document.querySelector(`#${item.id}`)
-            )
-            proxy.$myEcharts.drawPieEcharts(object.myChart, echartsData)
+            );
+            myEcharts.value.drawPieEcharts(object.myChart, echartsData)
         })
     };
     onMounted(() => {

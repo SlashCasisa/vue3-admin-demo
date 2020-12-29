@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts">
-import { getCurrentInstance, onMounted, reactive } from "vue";
+import { getCurrentInstance, onMounted, reactive,inject } from "vue";
 import exportDate from "../../components/dialogs/exportDate.vue";
-
+import Store from "../../store/store";
 export default {
   components: {
     exportDate
@@ -35,17 +35,22 @@ export default {
       isShow: false
     });
     // const { ctx } = getCurrentInstance();
-    const { proxy } = getCurrentInstance() as any; 
-    console.log(proxy,'proxy***')
+    // const { proxy } = getCurrentInstance() as any; 
+      let echarts = inject(Store.echarts) as any;
+    let myEcharts = inject(Store.myEcharts) as any;
     const initEchart = () => {
       object.echartsData.forEach((item) => {
         const seriesData = {
           seriesData: item.seriesData,
         };
-        object.myChart = proxy.$echarts.init(
+        // object.myChart = proxy.$echarts.init(
+        //   document.querySelector(`#${item.id}`)
+        // );
+        // proxy.$myEcharts.drawBarEcharts(object.myChart, seriesData);
+        object.myChart = echarts.value.init(
           document.querySelector(`#${item.id}`)
         );
-        proxy.$myEcharts.drawBarEcharts(object.myChart, seriesData);
+       myEcharts.value.drawBarEcharts(object.myChart, seriesData);
       });
     };
     onMounted(() => {
