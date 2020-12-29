@@ -9,11 +9,12 @@ export default function(){
         // 已取消置灰
         return rowIndex % 2 === 1 ? "even-row" : "odd-row";
       }; 
-      const { ctx  } = getCurrentInstance()
+      // const { ctx  } = getCurrentInstance()
+      const { proxy } = getCurrentInstance() as any;
         
       //获取列表内容
       const handleListData = async () => {
-       console.log(ctx.listParams,'listParams***')
+       console.log(proxy.listParams,'listParams***')
       };
       onMounted(() => {
         // 首屏加载的时候触发请求

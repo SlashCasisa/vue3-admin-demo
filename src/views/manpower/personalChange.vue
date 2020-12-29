@@ -34,20 +34,22 @@ export default {
       ],
       isShow: false
     });
-    const { ctx } = getCurrentInstance();
+    // const { ctx } = getCurrentInstance();
+    const { proxy } = getCurrentInstance() as any; 
+    console.log(proxy,'proxy***')
     const initEchart = () => {
       object.echartsData.forEach((item) => {
         const seriesData = {
           seriesData: item.seriesData,
         };
-        object.myChart = ctx.$echarts.init(
+        object.myChart = proxy.$echarts.init(
           document.querySelector(`#${item.id}`)
         );
-        ctx.$myEcharts.drawBarEcharts(object.myChart, seriesData);
+        proxy.$myEcharts.drawBarEcharts(object.myChart, seriesData);
       });
     };
     onMounted(() => {
-      initEchart();
+        initEchart();
     });
     const methods = {
       showDialog() {

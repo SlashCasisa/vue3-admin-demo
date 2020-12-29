@@ -105,8 +105,9 @@ export default {
             2: {color: '#FFCD9F'},
             3: {color: '#CD9FFF'}
         }
-    });
-    const { ctx } = getCurrentInstance()
+    }); 
+    // const { ctx } = getCurrentInstance()  as any
+    const { proxy } = getCurrentInstance() as any;
     const initEchart = () => {
         object.echartsData.forEach(item => {
             const seriesData = item.seriesData.map((item, index) => {
@@ -123,10 +124,10 @@ export default {
                 label: item.label,
                 seriesData: seriesData,
             }
-            object.myChart = ctx.$echarts.init(
+            object.myChart = proxy.$echarts.init(
                 document.querySelector(`#${item.id}`)
             )
-            ctx.$myEcharts.drawPieEcharts(object.myChart, echartsData)
+            proxy.$myEcharts.drawPieEcharts(object.myChart, echartsData)
         })
     };
     onMounted(() => {
