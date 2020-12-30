@@ -1,7 +1,8 @@
 import path from 'path'
 
 module.exports =  {
-  base: "/vue3-admin-demo/",
+  base: './',
+  // base: "/vue3-admin-demo/",
   assetsDir: "",
   outDir: 'dist',
   alias: {

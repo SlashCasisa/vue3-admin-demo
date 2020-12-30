@@ -1,10 +1,10 @@
-import layout from '../views/index.vue' //布局页面
+import layout from '/@/views/index.vue' //布局页面
 import { createWebHashHistory, createRouter } from 'vue-router'
-const history = createWebHashHistory("/vue3-admin-demo/")
-// const history = createWebHashHistory()
+// const history = createWebHashHistory("/vue3-admin-demo/")
+const history = createWebHashHistory()
 export const constantRouter = [{
     path: '/login',
-    component: () => import('../views/login.vue'),
+    component: () => import('/@/views/login.vue'),
     hidden: true,
     meta: {
         title: '登录',
@@ -25,7 +25,7 @@ export const asyncRouter = [{
     hidden: false,
     children: [{
         path: '/manpowerResources',
-        component: () => import('../views/manpower/resources.vue'),
+        component: () => import('/@/views/manpower/resources.vue'),
         meta: {
             title: "资源",
             icon: ''
@@ -46,7 +46,7 @@ export const asyncRouter = [{
     children: [
         {
         path: '/chat',
-        component: () => import('../views/manpower/resources.vue'),
+        component: () => import('/@/views/manpower/resources.vue'),
         meta: {
             title: "资料统计",
             icon: 'icon-manpower'
@@ -55,7 +55,7 @@ export const asyncRouter = [{
         },
         {
             path: '/personalChange',
-            component: () => import('../views/manpower/personalChange.vue'),
+            component: () => import('/@/views/manpower/personalChange.vue'),
             meta: {
                 title: '变动统计',
                 icon: 'icon-personnel'
@@ -76,7 +76,7 @@ export const asyncRouter = [{
     hidden: false,
     children: [{
         path: '/attendance',
-        component: () => import('../views/manpower/resources.vue'),
+        component: () => import('/@/views/manpower/resources.vue'),
         meta: {
             title: "考勤",
             icon: ''
@@ -96,7 +96,7 @@ export const asyncRouter = [{
     hidden: false,
     children: [{
         path: '/loginJournal',
-        component: () => import('../views/journal/login.vue'),
+        component: () => import('/@/views/journal/login.vue'),
         meta: {
             title: "登录",
             icon: 'icon-loginLog'
@@ -104,7 +104,7 @@ export const asyncRouter = [{
         hidden: false,
     },{
         path: '/operationJournal',
-        component: () => import('../views/journal/operation.vue'),
+        component: () => import('/@/views/journal/operation.vue'),
         meta: {
             title: "操作",
             icon: 'icon-operateLog'
